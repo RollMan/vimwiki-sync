@@ -68,8 +68,8 @@ augroup vimwiki
     au! VimEnter /home/yshimmyo/vimwiki_yshimmyo/*.wiki call s:pull_changes()
     au! BufRead /home/yshimmyo/vimwiki_yshimmyo/*.wiki call s:pull_changes()
     " auto commit changes on each file change
-    au! BufWritePost /home/yshimmyo/vimwiki_yshimmyo/*.wiki call s:commit_changes()
+    au! BufWritePost *.wiki call s:commit_changes()
     " push changes only on at the end
-    au! BufLeave /home/yshimmyo/vimwiki_yshimmyo/*.wiki call s:push_changes()
-    au! VimLeave /home/yshimmyo/vimwiki_yshimmyo/*.wiki call s:push_changes()
+    au! BufLeave *.wiki call s:push_changes()
+    au! VimLeave *.wiki call s:push_changes()
 augroup END
